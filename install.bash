@@ -23,6 +23,8 @@ echo "Checking PHP 7.1"
 if [ "`program_is_installed php7.1`" == "0" ]
 then
     echo "  > install"
+    add-apt-repository ppa:ondrej/php
+    apt-get update
     apt-get install php7.1
 else
     echo "  > looks good"
@@ -90,3 +92,5 @@ then
 else
     echo "  > looks good"
 fi
+
+apt-get autoclean
